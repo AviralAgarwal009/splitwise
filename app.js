@@ -27,16 +27,16 @@ app.use(simplificationRouter);
 app.use(paymentRouter);
 app.use(groupRouter);
 
-//add no route found erro
 
 
 app.use(errorHandler);
 app.use(outputRenderer);
 
 
+const PORT = process.env.PORT || 3000;
 
 // start the server
-app.listen(3000, async () => {
+app.listen(PORT, async () => {
     let mongooseConnectionString = mongodb.host;
 
     await mongoose.connect(mongooseConnectionString);
